@@ -1,0 +1,19 @@
+{
+  "name": "cartr-server-node-mongodb",
+  "version": "1.0.0",
+  "description": "Backend to CartR server in NodeJS with MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-Job/cartr-server-node-mongodb.git"
+  },
+  "author": "David-Job",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/David-Job/cartr-server-node-mongodb/issues"
+  },
+  "homepage": "https://github.com/David-Job/cartr-server-node-mongodb#readme"
+}
