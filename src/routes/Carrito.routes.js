@@ -16,7 +16,7 @@ module.exports = require('express').Router()
       id_usuario: req.body.id_usuario,
       id_articulo: req.body.id_articulo,
       cantidad: req.body.cantidad,
-    }).save
+    }).save()
       .then(() => res.json('Carrito añadido con éxito'))
       .catch((err) => res.status(400).json(`Error al añadir Carrito: ${err}`));
   })

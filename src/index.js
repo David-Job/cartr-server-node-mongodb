@@ -9,6 +9,7 @@ const port = process.env.NODE_SERVER_PORT;
 const app = express();
 
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/usuarios', require('./routes/Usuario.routes'));

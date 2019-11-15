@@ -18,7 +18,7 @@ module.exports = require('express').Router()
       apellido2: req.body.apellido2,
       direccion: req.body.direccion,
       email: req.body.email,
-    }).save
+    }).save()
       .then(() => res.json('Usuario añadido con éxito'))
       .catch((err) => res.status(400).json(`Error al añadir usuario: ${err}`));
   })
