@@ -1,15 +1,19 @@
 const { model, Schema } = require('mongoose');
 
-const carritoModel = model('Carrito', new Schema({
-  id_usuario: {
+const itemModel = model('Item', new Schema({
+  description: {
     type: String,
     required: true,
   },
-  id_articulo: {
+  brand: {
     type: String,
     required: true,
   },
-  cantidad: {
+  price: {
+    type: Number,
+    required: true,
+  },
+  stock: {
     type: Number,
     required: true,
   },
@@ -17,4 +21,4 @@ const carritoModel = model('Carrito', new Schema({
   timestamps: true,
 }));
 
-module.exports = carritoModel;
+module.exports = itemModel;

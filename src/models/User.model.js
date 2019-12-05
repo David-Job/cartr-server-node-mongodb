@@ -1,28 +1,28 @@
 const { model, Schema } = require('mongoose');
 
-const usuarioModel = model('Usuario', new Schema({
-  nombre: {
+const userModel = model('User', new Schema({
+  name: {
     type: String,
     required: true,
     trim: true,
   },
-  dni: {
+  idNumber: {
     type: String,
     required: true,
     unique: true,
     trim: true,
   },
-  apellido1: {
+  surname1: {
     type: String,
     required: true,
     trim: true,
   },
-  apellido2: {
+  surname2: {
     type: String,
     required: true,
     trim: true,
   },
-  direccion: {
+  address: {
     type: String,
     required: true,
   },
@@ -35,4 +35,4 @@ const usuarioModel = model('Usuario', new Schema({
   timestamps: true,
 }));
 
-module.exports = usuarioModel;
+module.exports = userModel;
