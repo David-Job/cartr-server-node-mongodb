@@ -12,9 +12,9 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/usuarios', require('./routes/User.routes'));
-app.use('/carritos', require('./routes/Cart.routes'));
-app.use('/articulos', require('./routes/Item.routes'));
+app.use('/api/users', require('./routes/User.routes'));
+app.use('/api/carts', require('./routes/Cart.routes'));
+app.use('/api/items', require('./routes/Item.routes'));
 
 mongoose.connect(uri, {
   useNewUrlParser: true,

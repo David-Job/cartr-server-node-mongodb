@@ -16,7 +16,7 @@ module.exports = require('express').Router()
 
   .post('/add', (req, res) => {
     new Item({
-      description: req.body.descripcion,
+      description: req.body.description,
       brand: req.body.brand,
       price: req.body.price,
       stock: req.body.stock,
