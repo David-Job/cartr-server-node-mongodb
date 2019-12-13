@@ -4,7 +4,7 @@ module.exports = require('express')
   .Router()
 
   .get('/', (req, res) => {
-    Item.find()
+    Item.find(req.query)
       .then((items) => res.json(items))
       .catch((err) => res.status(400).json(`Error while finding Items: ${err}`));
   })
@@ -16,15 +16,24 @@ module.exports = require('express')
   })
 
   .post('/add', (req, res) => {
-    new Item({
+    Item.exists({
       description: req.body.description,
       brand: req.body.brand,
-      price: req.body.price,
-      stock: req.body.stock,
-    })
-      .save()
-      .then((item) => res.json(item))
-      .catch((err) => res.status(400).json(`Error while adding Item: ${err}`));
+    }).then((t) => {
+      if (t) {
+        res.status(400).json('Error while adding Item: Duplicate description and brand');
+      } else {
+        new Item({
+          description: req.body.description,
+          brand: req.body.brand,
+          price: req.body.price,
+          stock: req.body.stock,
+        })
+          .save()
+          .then((item) => res.json(item))
+          .catch((err) => res.status(400).json(`Error while adding Item: ${err}`));
+      }
+    });
   })
 
   .put('/:id/update', (req, res) => {
